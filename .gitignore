@@ -1,0 +1,46 @@
+# Node modules (both backend & frontend)
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Environment files (keep secrets safe!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+client/build/
+.next/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+
+# Cache files
+.cache/
+.parcel-cache/
+*.pid
+
+# Coverage / test reports
+coverage/
+*.lcov
+
+# Misc
+*.tar.gz
