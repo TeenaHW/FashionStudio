@@ -8,8 +8,11 @@ import salaryRoutes from "./routes/salaryRoutes.js";
 import loanRoutes from "./routes/loanRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
-
-
+import cartRoutes from "./routes/cartRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
+import invoiceRoutes from "./routes/invoiceRoutes.js";
+import rateLimiter from "./middleware/rateLimiter.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 5001;
@@ -41,6 +44,10 @@ app.use("/api/salaries", salaryRoutes);
 app.use("/api/loans", loanRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/carts", cartRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payments", paymentRoutes);
+app.use("/api/invoices", invoiceRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

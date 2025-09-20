@@ -14,6 +14,14 @@ import EditLoan from './pages/EditLoan';
 import SupplierTransaction from './pages/SupplierTransaction';
 import Reports from './pages/Reports';
 import './index.css';
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CartPage from "./pages/CartPage";
+import PaymentPage from "./pages/PaymentPage";
+import OrderPage from "./pages/OrderPage";
+import InvoicePage from "./pages/InvoicePage";
+import ProductList from "./pages/ProductList";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
@@ -34,7 +42,15 @@ function App() {
               <Route path="/loan/edit/:id" element={<EditLoan />} />
               <Route path="/supplier-transactions" element={<SupplierTransaction />} />
               <Route path="/reports" element={<Reports />} />
-          </Routes>
+              <Route path="/ProductList" element={<ProductList />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/products" element={<ProductList />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/order" element={<OrderPage />} />
+              <Route path="/payment" element={<PaymentPage />} />
+              <Route path="/invoice" element={<InvoicePage />} />
+            </Routes>
         </main>
         
         <Footer />
