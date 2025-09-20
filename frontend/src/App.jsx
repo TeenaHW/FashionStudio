@@ -15,6 +15,19 @@ import SupplierTransaction from './pages/SupplierTransaction';
 import Reports from './pages/Reports';
 import './index.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import userHeader from './components/userHeader'; // Corrected import paths
+import AddFeedback from './components/AddFeedback';
+import ViewFeedback from './components/ViewFeedback';
+import AboutUs from './components/AboutUs';
+import Signup from './components/Signup';
+import UserProfile from './components/UserProfile';
+import Login from './components/Login';
+import ManageUsers from "./components/ManageUsers";
+import ForgotPassword from "./components/ForgotPassword";
+import FeedbackAnalytics from "./components/FeedbackAnalytics";
+
 function App() {
   return (
     <Router>
@@ -34,6 +47,15 @@ function App() {
               <Route path="/loan/edit/:id" element={<EditLoan />} />
               <Route path="/supplier-transactions" element={<SupplierTransaction />} />
               <Route path="/reports" element={<Reports />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/profile" element={<UserProfile />} />
+              <Route path="/" element={<AboutUs />} />
+              <Route path="/add" element={<AddFeedback />} />
+              <Route path="/feedback" element={<ViewFeedback />} />
+              <Route path="/manage-users" element={<ManageUsers />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/feedback-analytics" element={<FeedbackAnalytics />} />
           </Routes>
         </main>
         
