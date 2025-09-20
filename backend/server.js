@@ -8,8 +8,8 @@ import salaryRoutes from "./routes/salaryRoutes.js";
 import loanRoutes from "./routes/loanRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
-
-
+import transactionRoutes from "./routes/transactionRoutes.js"; 
+import notesRoutes from "./routes/notesRoutes.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 5001;
@@ -26,6 +26,10 @@ app.use(cors({
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+// this middleware pass the JSON bodies: req.body
+app.use(rateLimiter);
+
+
 // Basic route for testing
 app.get('/', (req, res) => {
   res.json({ 
@@ -41,6 +45,8 @@ app.use("/api/salaries", salaryRoutes);
 app.use("/api/loans", loanRoutes);
 app.use("/api/reports", reportRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/products", notesRoutes);
+app.use("/api/transactions", transactionRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -64,6 +70,7 @@ app.use('*', (req, res) => {
     ]
   });
 });
+
 
 // Database connection and server start
 connectDB().then(() => { 

@@ -11,6 +11,10 @@ import EditSalary from './pages/EditSalary';
 import LoanManagement from './pages/LoanManagement';
 import CreateLoan from './pages/CreateLoan';
 import EditLoan from './pages/EditLoan';
+import CreatePage from "./pages/CreatePage";
+import NoteDetailPage from "./pages/NoteDetailPage";
+import DetailPage from "./pages/DetailPage";
+import TransactionPage from "./pages/TransactionPage";
 import SupplierTransaction from './pages/SupplierTransaction';
 import Reports from './pages/Reports';
 import './index.css';
@@ -34,6 +38,11 @@ function App() {
               <Route path="/loan/edit/:id" element={<EditLoan />} />
               <Route path="/supplier-transactions" element={<SupplierTransaction />} />
               <Route path="/reports" element={<Reports />} />
+              <Route path="/create" element={<CreatePage />} />
+              <Route path="/product/:id" element={<NoteDetailPage />} />
+              <Route path="/product/:id/details" element={<DetailPage />} />
+              <Route path="/transaction" element={<TransactionPage />} />
+              <Route path="/hompageP" element={<HomePageP />} />
           </Routes>
         </main>
         
